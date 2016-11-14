@@ -2,6 +2,8 @@ const express = require('express');
 const hbs = require('hbs');
 const fs = require('fs');
 
+const port = process.env.PORT || 3000;//pega a porta do sistema
+
 var app = express();
 
 hbs.registerPartials(__dirname + '/views/partials');
@@ -58,6 +60,6 @@ app.get('/bad', (req, res)=>{
 		errorMessage:"Unable to handle request."
 	});
 });
-app.listen(3000, ()=>{
-	console.log('Server is running at port 3000');
+app.listen(port, ()=>{
+	console.log(`Server is running at port ${port}`);
 });
