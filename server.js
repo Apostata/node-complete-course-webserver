@@ -55,6 +55,13 @@ app.get('/about', (req, res)=>{
 	}); //rederiza o arquivo com o template engine setado
 });
 
+app.get('/portifolio', (req, res)=>{
+	res.render('portifolio.hbs',{
+		pageTitle: "Portifolio page",
+		welcomeMessage:"Portifolio page Here!"
+	}); //rederiza o arquivo com o template engine setado
+});
+
 app.get('/bad', (req, res)=>{
 	res.send({
 		errorMessage:"Unable to handle request."
